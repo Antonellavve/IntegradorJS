@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Alpha Sporting</title>
+</head>
+<body>
+
+    <header>
+        <img src="./assets/img/Logo.png" alt="logo" width="150" height="100" class="logo">            
+        
+<!-- MENU HAMBURGUESA -->
+        <label for="menu-toggle" class="menu-label"><i class="fa-solid fa-bars"></i></label>
+        <input id="menu-toggle" type="checkbox"/>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a class="link-navbar" href="#hero">HOME</a></li>
+                <li><a class="link-navbar" href="#cards">GENERO</a></li>
+                <li><a class="link-navbar" href="#categories">DEPORTE</a></li>
+                <li><a class="link-navbar" href="#about-us">ABOUT US</a></li>
+            </ul>
+<!-- CARRITO -->
+            <div class="cart">
+                <input type="checkbox" id="cart-toggle" />
+                <label for="cart-toggle" class="cart-label"><i class="fas fa-bag-shopping"></i></label>
+                <div class="cart-content">
+                    <h2>Productos</h2>
+                    <div class="cart-container">
+                    <p class="empty-msg">No hay productos en el carrito</p>
+                </div>
+                <span class="divisor"></span>
+                <div class="cart-total">
+                    <p>TOTAL:</p>
+                    <span class="total">$0</span>
+                </div>
+                    <button class="boton-comprar">Comprar</button>
+                    <button class="boton-borrar">Vaciar</button>
+                </div>
+            </div>
+            <!-- <div class="cart">
+                <i class="fas fa-bag-shopping"></i>
+            </div>
+            <div class="cart-open">
+                <h2>Productos</h2>
+                <div class="cart-container">
+                <p class="empty-msg">No hay productos en el carrito</p>
+                </div> -->
+                
+            <!-- <div class="cart-total">
+                <p>TOTAL:</p>
+                <span class="total">$0</span>
+            </div>
+                <button class="boton-comprar">Comprar</button>
+                <button class="boton-borrar">Vaciar</button>
+            </div> -->
+            <!-- <div  class="overlay show-overlay"></div> -->
+        </nav>
+    </header>
+
+<!-- HERO -->
+    <main>
+        <section id="hero"> 
+            <div class="hero">
+                <h1>Bienvenidos a <span>Alpha</span></h1>
+                <img src="./assets/img/correr-running-runner-playa.jpg" alt="img-hero" height="900" width="1520">
+            </div>
+        </section>  
+
+<!-- PRODUCTOS -->
+        <section id="cards">     
+            <h2>run to destiny</h2>
+                <div class="info-card">
+                    <h3>Todos</h3>
+                    <img src="./assets/img/deportes-card.jpg" alt="deportes-card" width="350" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Mujer</h3>
+                    <img src="./assets/img/mujer-card.jpg" alt="mujer-card" width="350" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Hombre</h3>
+                    <img src="./assets/img/hombre-card.jpg" alt="hombre-card" width="350" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Niños</h3>
+                    <img src="./assets/img/niños-card.jpg" alt="niños-card" width="350" height="300">
+                </div>
+            </div>
+        </section>
+
+        <div class="banner">
+            <span>✨DESCUENTOS PARA VOS✨</span>
+            <p>Llevate 20% off en compras mayores a $19,999.</p>
+            <a>COMPRAR AHORA</a>
+        </div>
+
+        <section id="categories">
+            <h2>Deportes</h2>
+                <button class="category active">Futbol</button>
+                <button class="category" data-category="running">Running</button>
+                <button class="category" data-category="natacion">Basquet</button>
+                <button class="category" data-category="tenis">Training</button>
+                <button class="category" data-category="otros">Otros</button>
+            <div class="contenedor-products">
+                <!-- <div class="product">
+                    <img src="./assets/img/products/botines-low.webp" alt="botines">
+                    <div class="info-product">
+                        <h3>Botines Low</h3>
+                        <p>$45.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/botines-naranjas.webp" alt="botines">
+                    <div class="info-product">
+                        <h3>Botines Naranja</h3>
+                        <p>$59.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/botines-X.webp" alt="botines">
+                    <div class="info-product">
+                        <h3>Botines X</h3>
+                        <p>$41.499</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/conjunto-infantil.webp" alt="conjunto">
+                    <div class="info-product">
+                        <h3>Conjunto Infantil</h3>
+                        <p>$32.599</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/conjunto-niñas.webp" alt="conjunto">
+                    <div class="info-product">
+                        <h3>Conjunto Unisex</h3>
+                        <p>$35.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/conjunto-boca.webp" alt="conjunto">
+                    <div class="info-product">
+                        <h3>Conjunto Boca Junior</h3>
+                        <p>$39.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/botines-niño.webp" alt="botines-niño">
+                    <div class="info-product">
+                        <h3>Botines Niño</h3>
+                        <p>$29.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/buzo-mangalarga.webp" alt="buzo">
+                    <div class="info-product">
+                        <h3>Buzo Manga Larga</h3>
+                        <p>$25.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/bolso-training.webp" alt="bolso">
+                    <div class="info-product">
+                        <h3>Bolso Training</h3>
+                        <p>$12.599</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/zapatillas-trainingLigra.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Training Ligra</h3>
+                        <p>$55.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/calza-entrenamiento.webp" alt="calza">
+                    <div class="info-product">
+                        <h3>Calza de Entrenamiento</h3>
+                        <p>$18.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/zapatillas-trainer.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Trainer</h3>
+                        <p>$38.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/calzaRunnin.webp" alt="calza-corta">
+                    <div class="info-product">
+                        <h3>Calza Running</h3>
+                        <p>$14.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/Zapatillas-running.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Running</h3>
+                        <p>$53.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/conjunto-river.webp" alt="conjunto">
+                    <div class="info-product">
+                        <h3>Conjunto River Plate</h3>
+                        <p>$39.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/musculosa-basquet.webp" alt="musculosa">
+                    <div class="info-product">
+                        <h3>Musculosa Basquet</h3>
+                        <p>$22.599</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/zapatillas-basquet.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Basquet</h3>
+                        <p>$65.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/zaaptillas-trailrunning.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Trail Running</h3>
+                        <p>$44.599</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/remera-niño.webp" alt="remera-niños">
+                    <div class="info-product">
+                        <h3>Remera Niño</h3>
+                        <p>$12.899</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/top-entrenamiento.webp" alt="top">
+                    <div class="info-product">
+                        <h3>Top de Entrenamiento</h3>
+                        <p>$8.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/short-sport.webp" alt="short">
+                    <div class="info-product">
+                        <h3>Short Sport</h3>
+                        <p>$9.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/remera-niños.webp" alt="remera-niño">
+                    <div class="info-product">
+                        <h3>Remera Niño</h3>
+                        <p>$12.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/remeras-basquet.webp" alt="remera">
+                    <div class="info-product">
+                        <h3>Remera Overside</h3>
+                        <p>$18.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/camiseta-titulas3.webp" alt="remera">
+                    <div class="info-product">
+                        <h3>Camiseta Titular Argentina 3 Estrellas</h3>
+                        <p>$23.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/zapatillas-2.0running.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Running 2.0</h3>
+                        <p>$68.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="./assets/img/products/zapatillas-luz.webp" alt="zapatillas">
+                    <div class="info-product">
+                        <h3>Zapatillas Luminus</h3>
+                        <p>$58.999</p>
+                        <button class="btn-comprar" data-id="id" data-name="name" data-price="price" data-img="img">>Comprar</button>
+                    </div>
+                </div> -->
+            </div>
+            <button class="btn-mas">Ver Más</button>
+        </section>
+
+<!-- ABOUT US -->
+        <section id="about-us">
+            <div class="about-us-info">
+                <h2>Sobre el mundo AS</h2>
+                <p>Nuestra meta es ayudarte a alcanzar las tuyas.
+                    En Alpha, nuestro trabajo es apoyar a los atletas en la búsqueda de la excelencia, 
+                    ya sea ayudándolos a conseguir nuevos récords o en un entrenamiento como hobbie, nosotros 
+                    queremos que se vean impulsados a seguir buscando esos objetivos que sueñan, ya sea 
+                    correr sus primeros 5 kilómetros o, simplemente, mantener un estilo de vida sano y activo.
+                    
+                    Nuestro sueño es encontrar la combbinacion perfecta entre funcionalidad y moda, aportando el
+                    mejor rendimiento tecnologico necesario. Trabajamos con un gran grupo de asociados talentosos y creativos
+                    que se encargan de dar vida a nuestras ideas. Confiamos een nuestro exito, como asi tambien confiamos en que 
+                    vos podes lograrlo.</p>
+            </div>
+        </section>
+    </main>
+
+<!-- FOOTER -->
+    <footer>
+        <div class="footer-contenedor">
+            <ul class="footer-links">
+                <li><a href="#">Términos de Uso</a></li>
+                <li><a href="#">Trabajá con Nosotros</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+            <div class="footer-name">
+            <span>2023 Alpha Sporting</span>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/data.js"></script>
+    <script src="./assets/index.js"></script>
+</body>
+</html>
