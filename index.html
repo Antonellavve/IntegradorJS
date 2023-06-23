@@ -7,23 +7,26 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Alpha Sporting</title>
+    <title>Alpha Sporting | Tienda Oficial</title>
 </head>
 <body>
 
     <header>
         <img src="./assets/img/Logo.png" alt="logo" width="150" height="100" class="logo">            
         
+
 <!-- MENU HAMBURGUESA -->
         <label for="menu-toggle" class="menu-label"><i class="fa-solid fa-bars"></i></label>
         <input id="menu-toggle" type="checkbox"/>
         <nav class="navbar">
             <ul class="navbar-list">
                 <li><a class="link-navbar" href="#hero">HOME</a></li>
-                <li><a class="link-navbar" href="#cards">GENERO</a></li>
+                <li><a class="link-navbar" href="#cards-content">GENERO</a></li>
                 <li><a class="link-navbar" href="#categories">DEPORTE</a></li>
                 <li><a class="link-navbar" href="#about-us">ABOUT US</a></li>
+                <li><a href="./contact.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
+
 <!-- CARRITO -->
             <div class="cart">
                 <input type="checkbox" id="cart-toggle" />
@@ -63,7 +66,13 @@
     </header>
 
 <!-- HERO -->
-    <main>
+    <main> 
+        
+            <div class="subscript">
+                <h3>Suscribite a ALPHA y recibi las ultimas noticias.</h3>
+                <a href="./contact.html">Unite</a>➡️
+            </div>
+
         <section id="hero"> 
             <div class="hero-content">
                 <h1>Bienvenidos a <span>Alpha</span></h1>
@@ -77,40 +86,46 @@
         </section>  
 
 <!-- PRODUCTOS -->
-        <section id="cards">     
-            <h2>run to destiny</h2>
-                <div class="info-card">
-                    <h3>Todos</h3>
-                    <img src="./assets/img/deportes-card.jpg" alt="deportes-card" width="350" height="300">
-                </div>
-                <div class="info-card">
-                    <h3>Mujer</h3>
-                    <img src="./assets/img/mujer-card.jpg" alt="mujer-card" width="350" height="300">
-                </div>
-                <div class="info-card">
-                    <h3>Hombre</h3>
-                    <img src="./assets/img/hombre-card.jpg" alt="hombre-card" width="350" height="300">
-                </div>
-                <div class="info-card">
-                    <h3>Niños</h3>
-                    <img src="./assets/img/niños-card.jpg" alt="niños-card" width="350" height="300">
-                </div>
+        <section id="cards-content"> 
+            <div class="content-title">
+                <h2>run to destiny</h2>  
+            </div>
+
+            <p class="subtitle-content">Comprar por género</p>
+
+            <div class="info-card">
+                <h3>Todos</h3>
+                <img src="./assets/img/deportes-card.jpg" alt="deportes-card" width="350" height="300">
+            </div>
+            <div class="info-card">
+                <h3>Mujer</h3>
+                <img src="./assets/img/mujer-card.jpg" alt="mujer-card" width="350" height="300">
+            </div>
+            <div class="info-card">
+                <h3>Hombre</h3>
+                <img src="./assets/img/hombre-card.jpg" alt="hombre-card" width="350" height="300">
+            </div>
+            <div class="info-card">
+                <h3>Niños</h3>
+                <img src="./assets/img/niños-card.jpg" alt="niños-card" width="350" height="300">
+            </div>
+            
+            <div class="banner">
+                <span>✨DESCUENTOS PARA VOS✨</span>
+                <p>Llevate 20% off en compras mayores a $19,999.</p>
+                <a href="./contact.html">REGISTRATE</a>
             </div>
         </section>
-
-        <div class="banner">
-            <span>✨DESCUENTOS PARA VOS✨</span>
-            <p>Llevate 20% off en compras mayores a $19,999.</p>
-            <a>COMPRAR AHORA</a>
-        </div>
-
+        
         <section id="categories">
             <h2>Deportes</h2>
-                <button class="category active">Futbol</button>
+            <div class="categories">
+                <button class="category active" data-category="otros">Otros</button>
+                <button class="category" data-category="futbol">Futbol</button>
                 <button class="category" data-category="running">Running</button>
-                <button class="category" data-category="natacion">Basquet</button>
-                <button class="category" data-category="tenis">Training</button>
-                <button class="category" data-category="otros">Otros</button>
+                <button class="category" data-category="basquet">Basquet</button>
+                <button class="category" data-category="training">Training</button>
+            </div>
             <div class="contenedor-products">
                 <!-- <div class="product">
                     <img src="./assets/img/products/botines-low.webp" alt="botines">
@@ -334,10 +349,10 @@
                     queremos que se vean impulsados a seguir buscando esos objetivos que sueñan, ya sea 
                     correr sus primeros 5 kilómetros o, simplemente, mantener un estilo de vida sano y activo.
                     
-                    Nuestro sueño es encontrar la combbinacion perfecta entre funcionalidad y moda, aportando el
+                    Nuestro sueño es encontrar la combinacion perfecta entre funcionalidad y moda, aportando el
                     mejor rendimiento tecnologico necesario. Trabajamos con un gran grupo de asociados talentosos y creativos
-                    que se encargan de dar vida a nuestras ideas. Confiamos een nuestro exito, como asi tambien confiamos en que 
-                    vos podes lograrlo.</p>
+                    que se encargan de dar vida a nuestras ideas. 
+                    Confiamos en nuestro exito, como asi tambien confiamos en que vos podes lograrlo.</p>
             </div>
         </section>
     </main>

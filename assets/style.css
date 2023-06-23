@@ -15,6 +15,10 @@ text-decoration: none;
 list-style-type: none;
 }
 
+section {
+  scroll-margin-top: 140px; /* crea un espacio en la parte superior de la sección al desplazar, no quedara oculto por el navbar. */
+}
+
 /* HEADER */
 
 header {
@@ -61,6 +65,12 @@ header {
   font-weight: 600;
 }
 
+.navbar-list i {
+  font-size: 20px !important;
+  color: #000000 !important;
+  /* Otros estilos personalizados */
+}
+
 .cart:before {
   content: "\f290";
   font-family: "Font Awesome 5 Free";
@@ -72,7 +82,7 @@ header {
 /* MENU HAMBURGUESA */
 
 .menu-label {
-  position: relative;
+  position: absolute;
   cursor: pointer;
   font-size: 20px;
 }
@@ -293,6 +303,37 @@ main {
   justify-content: center;
 }
 
+/* SUBSCRIPT */
+
+.subscript{
+  color: #ffffff;
+  padding: 10px;
+  background-color: #6a7da9;
+  width: 100%;
+  height: 70px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscript h3{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.subscript a{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: underline;
+  padding-left: 10px;
+}
+
+a:hover {
+  color: #fd0000;
+}
+
 /* HERO */
 
 #hero {
@@ -301,7 +342,6 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 70px;
 }
 
 .hero-content {
@@ -309,7 +349,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 75px 10px 48px 20px;
+  margin: 0 10px 48px 0;
 }
 
 .hero-content h1 {
@@ -337,7 +377,7 @@ main {
   display: flex;
   padding: 0;
   width: 400%;
-  animation: cambio 20s infinite alternate linear;
+  animation: cambio 10s infinite alternate linear;
 }
 
 .slider li {
@@ -346,7 +386,7 @@ main {
 }
 
 .slider img {
-  width: 90%;
+  width: 100%;
 }
 
 @keyframes cambio {
@@ -358,37 +398,46 @@ main {
   
   60% {margin-left: -200%;}
   85% {margin-left: -200%;}
-  
-  90% {margin-left: -300%;}
-  100% {margin-left: -300%;}
 }
 
 /* CATEGORIAS */
 
-#cards{
+#cards-content{
   width: 100%;
   height: 550px;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 40px;
   background-color: #92b6c1;
+  padding-top: 0;
 }
 
-#cards h2{
-  color: #e3e4e8;
-  font-size: 60px;
-  text-align: center;
+.content-title{
   background-color: #556da7;
   width: 100%;
   height: 150px;
-  padding: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.content-title h2{
+  color: #e3e4e8;
+  font-size: 60px;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+.subtitle-content{
+  font-size: 20px;
+  font-weight: 600;
+  color:#000000;
 }
 
 .info-card{
   display: inline-block;
   padding: 0 10px 10px 0;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .info-card h3{
@@ -413,15 +462,20 @@ main {
 }
 
 .banner a{
+  color: white;
+  font-size: 20px;
   justify-content: center;
   align-items: center;
   margin: 10px;
   text-decoration: underline;
-  font-size: 15px;
+}
+
+.banner a:hover {
+  color: #000000;
 }
 
 #categories{
-  margin-top: 60px;
+  margin-top: 200px;
 }
 
 #categories h2{
@@ -487,6 +541,12 @@ main {
 
 .about-us-info p{
   padding: 20px;
+}
+
+/* para el boton ver mas  */
+
+.hidden {
+  visibility: hidden;
 }
 
 /* FOOTER */
