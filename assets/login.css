@@ -61,6 +61,13 @@ color: gray;
 font-weight: 600;
 }
 
+.conteiner-menu{
+margin: 10px;
+display: grid;
+justify-content: center;
+align-items: center;
+}
+
 .cart:before {
 content: "\f290";
 font-family: "Font Awesome 5 Free";
@@ -108,20 +115,34 @@ content: "\f00d";
 .cart input[type="checkbox"] {
 display: flex;
 visibility: visible;
+position: absolute;
+top: 10px;
+left: 10px;
+right: 0;
+opacity: 0;
 }
 
 .cart input[type="checkbox"]:checked + label + .cart-content{
 display: flex;
 }
 
+.cart input[type="checkbox"]:checked + .cart-label:before {
+content: "";
+position: absolute;
+top: 50%;
+left: 10px;
+width: 20px;
+height: 20px;
+}
+
 .cart{
 background: rgb(255, 254, 254);
-width: 25px;
-height: 25px;
+font-size: 20px;
 right: 0;
 padding: 0;
 position: relative;
 cursor: pointer;
+margin-left: 15px;
 }
 
 .cart-content {
@@ -351,7 +372,7 @@ width: 30%;
 height: 40px;
 border: none;
 background-color:#000000;
-margin-top: 60px;
+margin-top: 55px;
 text-align: center;
 padding: 10px;
 }
@@ -389,6 +410,7 @@ width: 50%;
 height: 35px;
 padding: 10px;
 border: none;
+margin-bottom: 10px;
 }
 
 .register-user label{

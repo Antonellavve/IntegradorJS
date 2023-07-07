@@ -24,14 +24,14 @@ const productsData = [
         id: 4,
         name: "Conjunto Infantil",
         price: 32.599,
-        category: "otros",
+        category: "training",
         cardImg: "./assets/img/products/conjunto-infantil.webp",
     },
     {
         id: 5,
         name: "Conjunto Unisex",
         price: 35.999,
-        category: "otros",
+        category: "training",
         cardImg: "./assets/img/products/conjunto-niñas.webp",
     },
     {
@@ -59,14 +59,14 @@ const productsData = [
         id: 9,
         name: "Bolso Training",
         price: 12.599,
-        category: "running",
+        category: "training",
         cardImg: "./assets/img/products/bolso-training.webp",
     },
     {
         id: 10,
         name: "Zapatillas Training Ligra",
         price: 55.999 ,
-        category: "running",
+        category: "training",
         cardImg: "./assets/img/products/zapatillas-trainingLigra.webp",
     },
     {
@@ -129,7 +129,7 @@ const productsData = [
         id: 19,
         name: "Remera Niño",
         price: 12.899,
-        category: "otros",
+        category: "training",
         cardImg: "./assets/img/products/remera-niño.webp",
     },
     {
@@ -150,7 +150,7 @@ const productsData = [
         id: 22,
         name: "Remera Niño",
         price: 12.999,
-        category: "otros",
+        category: "training",
         cardImg: "./assets/img/products/remera-niños.webp",
     },
     {
@@ -164,14 +164,14 @@ const productsData = [
         id: 24,
         name: "Camiseta Titular Argentina 3 Estrellas",
         price: 23.999,
-        category: "basquet",
+        category: "futbol",
         cardImg: "./assets/img/products/camiseta-titulas3.webp",
     },
     {
         id: 25,
         name: "Zapatillas Running 2.0",
         price: 68.999,
-        category: "basquet",
+        category: "running",
         cardImg: "./assets/img/products/zapatillas-2.0running.webp",
     },
     {

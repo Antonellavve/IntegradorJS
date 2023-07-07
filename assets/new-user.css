@@ -108,20 +108,34 @@ content: "\f00d";
 .cart input[type="checkbox"] {
 display: flex;
 visibility: visible;
+position: absolute;
+top: 10px;
+left: 10px;
+right: 0;
+opacity: 0;
 }
 
 .cart input[type="checkbox"]:checked + label + .cart-content{
 display: flex;
 }
 
+.cart input[type="checkbox"]:checked + .cart-label:before {
+content: "";
+position: absolute;
+top: 50%;
+left: 10px;
+width: 20px;
+height: 20px;
+}
+
 .cart{
 background: rgb(255, 254, 254);
-width: 25px;
-height: 25px;
+font-size: 20px;
 right: 0;
 padding: 0;
 position: relative;
 cursor: pointer;
+margin-left: 15px;
 }
 
 .cart-content {
@@ -203,7 +217,6 @@ main {
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
 }
 
 .login {
@@ -216,7 +229,6 @@ box-sizing: border-box;
 opacity: 1;
 display: flex;
 flex-direction: column;
-align-items: center;
 }
 
 .login h2{
@@ -235,7 +247,7 @@ margin-top: 10px;
     color: #666565;
 }
 
-#loginform{
+#loginform-newuser{
 display: flex;
 flex-direction: column;
 color: #000000;
@@ -246,7 +258,7 @@ color: #000000;
     margin-top: 10px;
 }
 
-#loginform input{
+#loginform-newuser input{
     font-size: 13px;
     color: #1b262c;
     display: inline;
@@ -255,7 +267,7 @@ color: #000000;
     padding: 10px;
     border: none;
     margin-top: 10px;
-    }
+}
 
 .icon-register a{
 width: 55px;

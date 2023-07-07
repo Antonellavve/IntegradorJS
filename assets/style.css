@@ -19,6 +19,25 @@ section {
   scroll-margin-top: 140px; /* crea un espacio en la parte superior de la sección al desplazar, no quedara oculto por el navbar. */
 }
 
+.overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: none;
+}
+
+.show-overlay {
+  display: flex;
+  z-index: 2;
+}
+
 /* HEADER */
 
 header {
@@ -34,15 +53,19 @@ header {
 }
 
 .logo{
-    padding: 0;
-    height: 80px;
-    width: 100px;
-    justify-content: center;
+  padding: 0;
+  height: 80px;
+  width: 100px;
+  justify-content: center;
 }
 
 .navbar{
+  z-index: 2;
   display: flex;
-  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
 }
 
 .navbar li{
@@ -68,7 +91,6 @@ header {
 .navbar-list i {
   font-size: 20px !important;
   color: #000000 !important;
-  /* Otros estilos personalizados */
 }
 
 .cart:before {
@@ -84,7 +106,9 @@ header {
 .menu-label {
   position: absolute;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 25px;
+  z-index: 2;
+  padding-left: 60px;
 }
 
 .menu-label:before {
@@ -118,33 +142,49 @@ input[type="checkbox"]:checked ~ .menu-label:before {
 .cart input[type="checkbox"] {
   display: flex;
   visibility: visible;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 0;
+  opacity: 0;
 }
 
 .cart input[type="checkbox"]:checked + label + .cart-content{
   display: flex;
 }
 
+.cart input[type="checkbox"]:checked + .cart-label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
 .cart{
+  position: relative;
   background: rgb(255, 254, 254);
-  width: 25px;
-  height: 25px;
+  font-size: 20px;
   right: 0;
   padding: 0;
-  position: relative;
   cursor: pointer;
+  margin-left: 15px;
+  z-index: 3;
 }
 
 .cart-content {
-  position: fixed;
-  top: 80px;
-  right: 50px;
-  width: 25%;
+  position: absolute;
+  top: 55px;
+  right: 10px;
+  width: 500px;
   height: 400px;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(158, 158, 158);
   border-top: 0px;
   border-radius: 0px 0px 15px 15px;
-  z-index: 2;
+  z-index: 3;
   display: none;
   padding: 30px;
 }
@@ -185,11 +225,6 @@ input[type="checkbox"]:checked ~ .menu-label:before {
   font-size: 18px;
   border-radius: 10px;
   width: 60px;
-}
-
-.empty-msg {
-  color: rgb(17, 67, 113);
-  font-size: 14px;
 }
 
 .cart-content button{
@@ -286,6 +321,18 @@ input[type="checkbox"]:checked ~ .menu-label:before {
   border: 1px solid var(--electric);
 }*/
 
+/* CLICK ON THE CART */
+
+.cart-open {
+  transform: translate(0%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.empty-msg {
+  color: rgb(17, 67, 113);
+  font-size: 14px;
+}
+
 /* MAIN BODY */
 
 body{
@@ -377,7 +424,7 @@ a:hover {
   display: flex;
   padding: 0;
   width: 400%;
-  animation: cambio 10s infinite alternate linear;
+  animation: cambio 15s infinite alternate linear;
 }
 
 .slider li {
@@ -490,13 +537,10 @@ a:hover {
   padding: 10px;
   margin: 10px 10px;
   display: inline-block;
-  flex-direction: row;
-  gap: 15px;
   border-radius: 10px;
   background-color: #333;
   color: #ffffff;
   width: 90px;
-  justify-content: center;
 }
 
 /* PRODUCTOS */

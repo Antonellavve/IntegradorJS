@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/login.css">
+    <link rel="stylesheet" href="./assets/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+    <title>Alpha Sporting | Tienda Oficial</title>
+</head>
+<body>
+    <header>
+        <img src="./assets/img/Logo.png" alt="logo" width="150" height="100" class="logo">            
+        
+        <div class="conteiner-menu">
+<!-- MENU HAMBURGUESA -->
+            <label for="menu-toggle" class="menu-label"><i class="fa-solid fa-bars"></i></label>
+            <input id="menu-toggle" type="checkbox"/>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a class="link-navbar" href="./index.html">HOME</a></li>
+                    <li><a class="link-navbar" href="./index.html">GENERO</a></li>
+                    <li><a class="link-navbar" href="./index.html">DEPORTE</a></li>
+                    <li><a class="link-navbar" href="./index.html">ABOUT US</a></li>
+                </ul>
+            
+<!-- CARRITO -->
+            <div class="cart">
+                <input type="checkbox" id="cart-toggle" />
+                <label for="cart-toggle" class="cart-label"><i class="fas fa-bag-shopping"></i></label>
+                <div class="cart-content">
+                    <h2>Productos</h2>
+                    <div class="cart-container">
+                    <p class="empty-msg">No hay productos en el carrito</p>
+                </div>
+                <span class="divisor"></span>
+                <div class="cart-total">
+                    <p>TOTAL:</p>
+                    <span class="total">$0</span>
+                </div>
+                    <button class="boton-comprar">Comprar</button>
+                    <button class="boton-borrar">Vaciar</button>
+                </div>
+            </div>
+            <!-- <div class="cart">
+                <i class="fas fa-bag-shopping"></i>
+            </div>
+            <div class="cart-open">
+                <h2>Productos</h2>
+                <div class="cart-container">
+                <p class="empty-msg">No hay productos en el carrito</p>
+                </div> -->
+                
+            <!-- <div class="cart-total">
+                <p>TOTAL:</p>
+                <span class="total">$0</span>
+            </div>
+                <button class="boton-comprar">Comprar</button>
+                <button class="boton-borrar">Vaciar</button>
+            </div> -->
+            <!-- <div  class="overlay show-overlay"></div> -->
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="titulo">
+            UNETE Y OBTENÉ MUCHOS BENEFICIOS
+            <p>Si ya tenías una cuenta registrada con gmail, deberás colocar tu mail y seleccionar '¿Olvidó 
+            su contraseña?'. Inmediatamente te enviaremos un mail con tu nueva contraseña.</p>
+        </div>
+        <div id="contenedor"> 
+            <div class="new-user">
+                <h2>NUEVOS CLIENTES</h2>
+                <p>Creando una cuenta con nuestra tienda podrá realizar el proceso de compra más rápidamente, 
+                manejar múltiples direcciones de envío, ver y seguir el rastro de sus pedidos y mucho más.</p>
+                <a href="./new-user.html" title="CrearCuenta" name="CrearCuenta">CREAR CUENTA</button>
+            </div>   
+            <br>
+            <div class="register-user">
+                <h2>CLIENTES REGISTRADOS</h2>
+                <div id="loginform">
+                    <label for="email">* Ingresa tu email</label>
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+                    <label for="password">* Contraseña</label>
+                    <input id="password" type="password" placeholder="Contraseña" name="password" required>
+                    <a href="#">¿Olvidó su contraseña?</a>
+                    <button type="submit" title="Ingresar" name="Ingresar">INICIAR SESIÓN</button>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <span>✨DESCUENTOS PARA VOS✨</span>
+            <p>Llevate 20% off en compras mayores a $19,999.</p>
+            <a href="./contact.html">REGISTRATE</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-contenedor">
+            <ul class="footer-links">
+                <li><a href="#">Términos de Uso</a></li>
+                <li><a href="#">Trabajá con Nosotros</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+            <div class="footer-name">
+            <span>2023 Alpha Sporting</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
