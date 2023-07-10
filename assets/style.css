@@ -145,10 +145,6 @@ header {
   top: 30px;
 }
 
-.cart::-webkit-scrollbar {
-  display: none;
-}
-
 .cart h2 {
   color: #333;
   font-size: 20px;
@@ -161,9 +157,9 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  background-color: #eaeaea4e;
+  background-color:#eff4fd;
   padding: 20px;
-  border: solid 2px #000000;
+  border: solid 2px #55547b;
   border-radius: 10px;
 }
 
@@ -189,6 +185,7 @@ header {
   color: gray;
   font-weight: 300;
   font-size: 14px;
+  color: #000000;
 }
 
 .select-handler {
@@ -204,21 +201,20 @@ header {
   align-items: center;
   padding: 2px 8px;
   border-radius: 5px;
-  color: var(--text-white);
+  color: grey;
   font-weight: 400;
 }
 
-.select-quantity {
-  color: var(--text-gray);
+.more {
+  color: rgb(0, 0, 0);
+  background-color:#ffffff;
+  border: solid black 1px;
 }
 
-.up {
-  border: 1px solid var(--electric);
-}
-
-.down {
-  background-color: var(--secondary);
-  border: 1px solid var(--electric);
+.less {
+  color: rgb(0, 0, 0);
+  background-color:#ffffff;
+  border: solid black 1px;
 }
 
 .divisor {
@@ -583,7 +579,7 @@ footer{
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: green;
+  background: rgb(0, 54, 142);
   position: fixed;
   bottom: 0;
   width: 100%;

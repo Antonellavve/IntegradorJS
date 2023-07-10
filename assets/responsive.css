@@ -7,7 +7,7 @@
   .navbar-list {
     position: absolute;
     top: 80px;
-    left: 25%;
+    left: 5%;
     right: 5%;
     height: 550px;
     width: 700px;
@@ -209,8 +209,9 @@
   }
 
   .categories{
-    margin: 5px;
-    width: 70%;
+    margin: 50px;
+    display: flex;
+    gap: 10px;
   }
 
 }
