@@ -1,19 +1,4 @@
 @media (max-width: 992px) {
-  /*header*/
-  body{
-    width: 992px;
-  }
-
-  main{
-    width: 992px;
-  }
-
-  header{
-    width: 992px;
-    display: flex;
-    flex-direction: row;
-    padding-right: 35px;
-  }
 
   .navbar{
     margin: 20px;
@@ -43,15 +28,7 @@
     justify-content: center;
   }
 
-  .menu-label:before{
-    visibility: visible;
-    display: flex;
-  }
-
-  #menu-toggle:checked ~ .navbar .navbar-list {
-    display: flex;
-  }
-
+  /* Mostramos el icono del menu */
   .menu-label {
     display: flex;
     order: 2;
@@ -60,6 +37,10 @@
 
   .menu-open {
     display: flex;
+  }
+
+  .cart-bubble{
+    right: 85px;
   }
 
   main{
@@ -123,16 +104,16 @@
 
 @media (max-width: 576px){
 
-  body{
-    width: 576px;
-  }
-
   main{
     width: 576px;
   }
 
-  header{
+  body{
     width: 576px;
+  }  
+  
+  header{
+    width: 570px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -141,26 +122,32 @@
   }
 
   .navbar{
-    margin: 0;
+    margin: 60px;
   }
 
   .navbar-list{
-    width: 400px;
+    width: 460px;
+    height: 350px;
     padding: 0;
     gap: 0;
-    left: 80px;
+    left: 60px;
   }
 
   .navbar-list a{
-    font-size: 12px;
-  }
-
-  .menu-label + .cart{
     font-size: 14px;
   }
 
+  .cart-bubble{
+    right: 125px;
+  }
+
+  .cart{
+    right: 50px;
+    width: 460px;
+    height: auto;
+  }
+  
   .subscript{
-    width: 576px;
     height: 50px;
   }
 
@@ -209,12 +196,21 @@
   
 @media (max-width: 320px){
 
-  #categories{
-    margin-top: 50px;
+  .navbar-list{
+    right: 10%;
   }
 
-  #categories button{
-    margin: 2px;
+  .cart{
+    right: 40px;
+  }
+
+  #categories{
+    margin-top: 20px;
+  }
+
+  .categories{
+    margin: 5px;
+    width: 70%;
   }
 
 }

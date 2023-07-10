@@ -1,18 +1,23 @@
 const productsContainer = document.querySelector(".contenedor-products");
-const btnMore = document.querySelector (".btn-mas");
+const btnMore = document.querySelector (".btn-more");
 const containerCategories = document.querySelector (".categories");
 const listOfCategories = document.querySelectorAll(".category");
 const cartIcon = document.querySelector (".cart-label");
-const cartOpen = document.querySelector (".cart-content");
+const cartOpen = document.querySelector (".cart");
 const btnOfMenu = document.querySelector (".menu-label");
 const contentOfMenu = document.querySelector (".navbar-list");
 const overlay = document.querySelector (".overlay");
-const cartProducts = document.querySelector (".cart-container");
+const productsCart = document.querySelector (".cart-container");
+const total = document.querySelector (".total");
+const eventModal = document.querySelector (".add-modal");
+const btnBuy = document.querySelector (".btnCart-buy");
+const btnDelete = document.querySelector (".btnCart-delete");
+const Bubble = document.querySelector (".cart-bubble");
 
-let cart = JSON.parse(localStorage.getItem("cart-content")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const saveCart = () => {
-    localStorage.setItem("cart-content", JSON.stringify());
+    localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 // renderizar los productos
@@ -24,7 +29,7 @@ const createProductTemplate = (product) => {
             <div class="info-product">
                 <h3>${name}</h3>
                 <p>$${price}</p>
-                <button class="btn-comprar" data-id="${id}" data-name="${name}" data-price="$${price}" data-img="${cardImg}">Comprar</button>
+                <button class="btn-buy" data-id="${id}" data-name="${name}" data-price="$${price}" data-img="${cardImg}">Comprar</button>
             </div>
         </div>
     `;
@@ -76,7 +81,7 @@ const setBtnVisibility = () => {
         return;
     }
     btnMore.classList.add("hidden");
-}
+};
 
 const changeFilterState = (btn) => {
     appState.activeFilter = btn.dataset.category;
@@ -89,7 +94,7 @@ const renderProductsFilter = () => {
         return product.category === appState.activeFilter;
     });
     renderProducts(filteredProducts); 
-}
+};
 
 // botones de filtrar productos
 const btnForCategorie = ({ target }) => {
@@ -109,11 +114,11 @@ const btnForCategorie = ({ target }) => {
 
 //para que no se superponga carrito y menu (no funciona)
 
-const btnCart = () => {
+const toggleCart = () => {
     cartOpen.classList.toggle("cart-open");
     if (contentOfMenu.classList.contains ("menu-open")) {
         contentOfMenu.classList.remove ("menu-open");
-        return
+        return;
     }
     overlay.classList.toggle("show-overlay");
 };
@@ -154,27 +159,135 @@ const closeOverlayClick = () => {
 
 //logica del carrito
 
-const renderCart = () => {
+const createCartProductTemplate = (productsCart) => {
+	const { id, name, price, img, quantity } = productsCart;
+	return `
+	<div class="cart-select">
+		<img
+			src=${img}
+			alt="imagen del producto"
+		/>
+		<div class="select-info">
+			<h3 class="select-name">${name}</h3>
+			<span class="select-price">${price}</span>
+		</div>
+		<div class="select-handler">
+			<span class="quantity-handler down" data-id=${id}>-</span>
+			<span class="select-quantity">${quantity}</span>
+			<span class="quantity-handler up" data-id=${id}>+</span>
+		</div>
+	</div>
+	`;
+};
+
+const renderCartProduct = () => {
     if (!cart.length) {
-    cartProducts.innerHTML = `<p class="empty-msg">No hay productos en el carrito</p>`;
-    }
+    productsCart.innerHTML = `<p class="empty-msg">No hay productos en el carrito</p>`;
+    return;
+    } 
+    productsCart.innerHTML = cart.map(createCartProductTemplate).join("");
 };  
+
+const getTotal = () => {
+    return cart.reduce ((acc,val) => {
+        return acc+ Number(val.price) * Number (val.quantity);
+    }, 0);
+};
+
+const cartTotal = () => {
+    total.innerHTML = `${getTotal().toFixed (2)}`;
+};
+
+const desestructuringProductData = (product) => {
+    const {id, name, price, img} = product;
+    return {id, name, price, img};
+};
+
+const ifProductExisting = (productId) => {
+    return cart.find((item) => {
+        return item.id === productId;
+    });
+};
+
+const buyUnitMore = (product) => {
+    cart = cart.map ((productsCart) => {
+        return productsCart.id === product.id
+        ? {...productsCart, quantity: productsCart.quantity + 1}
+        : productsCart;
+    });
+};
+
+const showEventModal = (msg) => {
+    eventModal.classList.add ("active-modal");
+    eventModal.textContent = msg;
+    setTimeout(() => {
+        eventModal.classList.remove("active-modal");
+    }, 1500);
+};
+
+const createCartProduct = (product) => {
+    cart = [
+        ...cart,
+        {
+            ...product,
+            quantity: 1,
+        },
+    ];
+};
+
+const btnDisabled = (btn) => {
+    if(!cart.length) {
+        btn.classList.add ("disabled");
+    } else {
+        btn.classList.remove ("disabled");
+    }
+};
+
+const renderBubbleOfCart = () => {
+    Bubble.textContent = cart.reduce ((acc, val) => {
+        return acc + val.quantity;
+    }, 0);
+};
+
+const updateCartState = () => {
+    saveCart();
+    renderCartProduct();
+    cartTotal();
+    btnDisabled(btnBuy);
+    btnDisabled(btnDelete);
+    renderBubbleOfCart();
+};
+
+const productAdd = (e) => {
+    if(!e.target.classList.contains ("btn-buy")){
+        return;
+    }
+    const product = desestructuringProductData(e.target.dataset);
+    if (ifProductExisting (product.id)){
+        buyUnitMore(product);
+        showEventModal("Se agrego un producto más al carrito");
+    } else{
+        createCartProduct (product);
+        showEventModal("El producto esta listo para su compra");
+    }
+    updateCartState();
+};
 
 const init = () =>{
     renderProducts(appState.products[appState.currentProductsIndex]);
     btnMore.addEventListener("click", moreProducts);
     containerCategories.addEventListener("click", btnForCategorie )
-    cartIcon.addEventListener("click", btnCart);
+    cartIcon.addEventListener("click", toggleCart);
     btnOfMenu.addEventListener("click", toggleMenu);
     window.addEventListener("scroll", closeScroll);
     contentOfMenu.addEventListener("click", closeOnClick);
     overlay.addEventListener("click", closeOverlayClick);
-    document.addEventListener("DOMContentLoaded", renderCart);
+    document.addEventListener("DOMContentLoaded", renderCartProduct);
+    document.addEventListener ("DOMContentLoaded", cartTotal);
+    productsContainer.addEventListener ("click", productAdd);
+    btnDisabled(btnBuy);
+    btnDisabled(btnDelete);
+    renderBubbleOfCart();
 };
 
 init();
-
-// function toggleMenu() {
-//     var menu = document.getElementById('menu');
-//     menu.classList.toggle('active');
-//   }            ****para el menu hamburguesa hacerlo funcional

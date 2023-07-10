@@ -16,35 +16,39 @@
 
 <!-- MENU HAMBURGUESA -->        
     <nav class="navbar">
-        <label for="menu-toggle" class="menu-label"><i class="fa-solid fa-bars"></i></label>
-        <input id="menu-toggle" type="checkbox"/>
+        <div class="menu-label">
+            <img src="./assets/img/menu.png" alt="" class="menu-icon" width="25" height="25" />
+        </div>
         
             <ul class="navbar-list">
                 <li><a class="link-navbar" href="#hero">HOME</a></li>
                 <li><a class="link-navbar" href="#cards-content">GENERO</a></li>
                 <li><a class="link-navbar" href="#categories">DEPORTE</a></li>
                 <li><a class="link-navbar" href="#about-us">ABOUT US</a></li>
-                <li><a href="./login.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="./login.html">INICIAR SESIÓN</a></li>
             </ul>
     
 <!-- CARRITO -->
-            <div class="cart">
-                <input type="checkbox" id="cart-toggle" />
-                <label for="cart-toggle" class="cart-label"><i class="fas fa-bag-shopping"></i></label>
+            <div class="cart-label">
+                <img src="./assets/img/carrito.png" alt="carrito" width="25" height="25">
+            </div>        
+                <div class="cart-bubble">0</div>
+            
                 
-                <div class="cart-content">
+                <div class="cart">
                     <h2>Productos</h2>
                     
-                    <div class="cart-container"> 
+                    <div class="cart-container">
+                    </div> 
                     
                     <span class="divisor"></span>
+
                     <div class="cart-total">
                         <p>TOTAL:</p>
                         <span class="total">$0</span>
                     </div>
-                    <button class="boton-comprar">Comprar</button>
-                    <button class="boton-borrar">Vaciar</button>
-                    </div> 
+                    <button class="btnCart-buy">Comprar</button>
+                    <button class="btnCart-delete">Vaciar Carrito</button>
                 </div>
             </div>
             <div class="overlay"></div>
@@ -107,13 +111,13 @@
             <h2>Deportes</h2>
             <div class="categories">
                 <button class="category active">Todos</button>
-                <button class="category" data-category="futbol">Futbol</button>
+                <button class="categorycomprar" data-category="futbol">Futbol</button>
                 <button class="category" data-category="running">Running</button>
                 <button class="category" data-category="basquet">Basquet</button>
                 <button class="category" data-category="training">Training</button>
             </div>
             <div class="contenedor-products"></div>
-            <button class="btn-mas">Ver Más</button>
+            <button class="btn-more">Ver Más</button>
         </section>
 
 <!-- ABOUT US -->
@@ -147,6 +151,7 @@
             </div>
         </div>
     </footer>
+    <div class="add-modal"></div>
     <script src="./assets/data.js"></script>
     <script src="./assets/index.js"></script>
 </body>
