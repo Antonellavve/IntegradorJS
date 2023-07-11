@@ -100,6 +100,22 @@
   .footer-contenedor{
     width: 992px;
   }
+
+  .new-user a{
+    margin-top: 10px;
+    font-size: 14px;
+    height: 60px;
+    width: 120px;
+    justify-content: center;
+  }
+
+  .register-user button{
+    margin-top: 0;
+    font-size: 14px;
+    height: 60px;
+    width: 120px;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 576px){
@@ -192,6 +208,24 @@
   .footer-name{
     font-size: 14px;
   }
+
+  #contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+  }
+
+  .new-user,
+  .register-user{
+    width: 500px;
+    margin: 10px;
+  }
+
+  .login{
+    width: 80%;
+    height: auto;
+  }
 }
   
 @media (max-width: 320px){
@@ -214,4 +248,8 @@
     gap: 10px;
   }
 
+  .login{
+    font-size: 12px;
+    height: auto;
+  }
 }

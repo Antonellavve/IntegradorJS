@@ -85,7 +85,7 @@ align-items: center;
 .login {
 margin: 20px 0 0 10px;
 width: 700px;
-height: 650px;
+height: 700px;
 padding: 30px 30px 50px 30px;
 background-color:  #e3e4e8;
 box-sizing: border-box;
@@ -144,7 +144,7 @@ display: flex;
 visibility: visible;
 }
 
-.login button {
+.registro-button{
 font-size: 14px;
 color:#ffffff;
 width: 35%;

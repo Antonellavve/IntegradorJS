@@ -189,13 +189,17 @@ const renderCartProduct = () => {
 };  
 
 const getTotal = () => {
-    return cart.reduce ((acc,val) => {
-        return acc + Number(val.price) * Number (val.quantity);
-    }, 0);
+    return cart.reduce((acc, val) => {
+    const price = parseFloat(
+        val.price.replace("$", "").replace(".", "").replace(",", ".")
+    );
+      return acc + price * val.quantity;
+}, 0);
 };
 
 const cartTotal = () => {
-    total.innerHTML = `${getTotal().toFixed (2)}`;
+    const totalValue = getTotal().toFixed(2);
+    total.innerHTML = `$${totalValue}`;
 };
 
 const desestructuringProductData = (product) => {
