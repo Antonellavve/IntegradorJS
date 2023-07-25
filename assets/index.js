@@ -112,7 +112,7 @@ const btnForCategorie = ({ target }) => {
 };
 
 
-//para que no se superponga carrito y menu (no funciona)
+//para que no se superponga carrito y menu
 
 const toggleCart = () => {
     cartOpen.classList.toggle("cart-open");
