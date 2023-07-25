@@ -10,7 +10,7 @@ const overlay = document.querySelector (".overlay");
 const productsCart = document.querySelector (".cart-container");
 const total = document.querySelector (".total");
 const eventModal = document.querySelector (".add-modal");
-const btnBuy = document.querySelector (".btn-buy");
+const btnBuy = document.querySelector (".btn-buy-cart");
 const btnDelete = document.querySelector (".btn-delete");
 const bubble = document.querySelector (".cart-bubble");
 
@@ -194,7 +194,7 @@ const getTotal = () => {
         val.price.replace("$", "").replace(".", "").replace(",", ".")
     );
       return acc + price * val.quantity;
-}, 0);
+},0);
 };
 
 const cartTotal = () => {
@@ -263,7 +263,7 @@ const updateCartState = () => {
 };
 
 const productAdd = (e) => {
-    if(!e.target.classList.contains ("btn-buy")){
+    if(!e.target.classList.contains ("btn-buy-cart")) {
         return;
     }
     const product = desestructuringProductData(e.target.dataset);
@@ -305,7 +305,7 @@ const btnLessEvent = (id) => {
 
 const btnMoreEvent = (id) => {
     const ifProductExisting = cart.find ((item) => item.id === id);
-    productAdd (ifProductExisting);
+    buyUnitMore (ifProductExisting);
 };
 
 const quantityHandler = (e) => {

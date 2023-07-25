@@ -15,6 +15,18 @@ text-decoration: none;
 list-style-type: none;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+}
+
 section {
   scroll-margin-top: 140px; /* crea un espacio en la parte superior de la sección al desplazar, no quedara oculto por el navbar. */
 }
@@ -133,7 +145,6 @@ header {
   cursor: pointer;
   margin-left: 15px;
   z-index: 2;
-  min-width: 375px;
   transform: translate(200%);
   transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
@@ -267,21 +278,14 @@ header {
   font-size: 14px;
 }
 
-/* MAIN BODY */
-
-body{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  width: 100%;
-}
+/* MAIN */
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
 }
 
 /* SUBSCRIPT */
@@ -307,7 +311,6 @@ main {
   color: #ffffff;
   font-size: 20px;
   font-weight: 400;
-  text-decoration: underline;
   padding-left: 10px;
 }
 
@@ -362,7 +365,7 @@ a:hover {
 }
 
 .slider li {
-  width: 25%; /* Ajusta el ancho según la cantidad de imágenes */
+  width: 25%; 
   list-style: none;
 }
 
@@ -397,7 +400,7 @@ a:hover {
 .content-title{
   background-color: #556da7;
   width: 100%;
-  height: 150px;
+  height: auto;
   padding: 0;
   margin: 0;
 }
@@ -456,7 +459,7 @@ a:hover {
 }
 
 #categories{
-  margin-top: 180px;
+  margin-top: 10%;
 }
 
 #categories h2{
@@ -545,14 +548,13 @@ footer{
 
 .footer-links li{
   display: inline;
-  font-size: 16px;
-  color: #535252;
-  border-right: 2px solid white;
 }
 
 .footer-links a{
   padding: 0 10px 0 10px;
   color: #535252;
+  border-right: 2px solid white;
+  font-size: 14px;
 }
 
 .footer-name{
