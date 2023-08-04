@@ -263,7 +263,7 @@ const updateCartState = () => {
 };
 
 const productAdd = (e) => {
-    if(!e.target.classList.contains ("btn-buy-cart")) {
+    if(!e.target.classList.contains ("btn-buy")) {
         return;
     }
     const product = desestructuringProductData(e.target.dataset);
